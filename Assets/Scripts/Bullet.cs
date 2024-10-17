@@ -20,9 +20,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
-        damageable.TakeDamage(damage);
-        
-        Debug.Log($"Daamge: {damage} || Collision {collision.gameObject.name}");
+        damageable.UpdateHealth(-damage);
         Destroy(gameObject);
     }
     private void Destroy()

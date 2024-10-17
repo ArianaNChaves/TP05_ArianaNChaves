@@ -15,12 +15,16 @@ public class Health : MonoBehaviour, IDamageable
         _health = maxHealth;
     }
     
-    public void TakeDamage(int amount)
+    public void UpdateHealth(int amount)
     {
-        _health -= amount;
+        _health += amount;
         if (_health <= 0)
         {
             Die();
+        }
+        if (_health > maxHealth)
+        {
+            _health = maxHealth;
         }
     }
 
