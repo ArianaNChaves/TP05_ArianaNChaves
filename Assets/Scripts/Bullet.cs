@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
     [SerializeField] private float speed;
     [SerializeField] private float lifeTime = 5.0f;
 
@@ -19,6 +19,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        damageable.TakeDamage(damage);
+        
+        Debug.Log($"Daamge: {damage} || Collision {collision.gameObject.name}");
         Destroy(gameObject);
     }
     private void Destroy()

@@ -5,18 +5,18 @@ using UnityEngine;
 public class EnemyAimPlayer : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    private bool _seePlayer = false;
+    //private bool _seePlayer = false;
     
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        _seePlayer = true;
+        //_seePlayer = true;
         AimThePlayer();
     }
     
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _seePlayer = false;
+        //_seePlayer = false;
     }
     
     

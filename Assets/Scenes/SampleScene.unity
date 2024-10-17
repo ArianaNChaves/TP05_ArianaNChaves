@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224467561}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 224467560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53, y: 0, z: 0}
+  m_LocalPosition: {x: 0.46, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 532215615}
   - component: {fileID: 532215614}
   - component: {fileID: 532215619}
+  - component: {fileID: 532215620}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -463,6 +464,20 @@ MonoBehaviour:
   shootPoint: {fileID: 1673236644}
   bulletPrefab: {fileID: 6948319904522894226, guid: 00011347a8843e347810dbd044e96fc0, type: 3}
   fireRate: 1
+--- !u!114 &532215620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532215613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c3f67eecadf944ea46c9cc6491dacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 100
 --- !u!1 &618822630
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +490,8 @@ GameObject:
   - component: {fileID: 618822631}
   - component: {fileID: 618822634}
   - component: {fileID: 618822633}
-  m_Layer: 0
+  - component: {fileID: 618822635}
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +559,7 @@ Transform:
   m_GameObject: {fileID: 618822630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.22, y: -2.43, z: 0}
+  m_LocalPosition: {x: -8.22, y: -2.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -565,7 +581,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -612,6 +628,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &618822635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618822630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c3f67eecadf944ea46c9cc6491dacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 100
 --- !u!1 &818427811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 224467561}
   bulletPrefab: {fileID: 6948319904522894226, guid: 00011347a8843e347810dbd044e96fc0, type: 3}
-  fireRate: 1
+  fireRate: 2
 --- !u!61 &1724428881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1091,7 +1121,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6711
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
