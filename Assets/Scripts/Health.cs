@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour, IHealthHandler
 {
-    [SerializeField] private RawImage healthBar;
+    [SerializeField] private Image healthBar;
     [SerializeField] private int maxHealth = 100;
     
     private int _health;
@@ -13,6 +13,7 @@ public class Health : MonoBehaviour, IDamageable
     private void Start()
     {
         _health = maxHealth;
+        UpdateHealthBar();
     }
     
     public void UpdateHealth(int amount)
@@ -26,11 +27,14 @@ public class Health : MonoBehaviour, IDamageable
         {
             _health = maxHealth;
         }
+
+        UpdateHealthBar();
     }
 
     private void UpdateHealthBar()
     {
-        
+        float clampedHealth = Mathf.Clamp(_health, 0, maxHealth);
+        healthBar.fillAmount = clampedHealth / maxHealth;
     }
 
     private void Die()

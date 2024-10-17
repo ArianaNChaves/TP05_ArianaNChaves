@@ -10,8 +10,8 @@ public class Heal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        IDamageable damageable = other.GetComponent<IDamageable>();
-        damageable.UpdateHealth(amountToHeal);
+        IHealthHandler healthHandler = other.GetComponent<IHealthHandler>();
+        healthHandler.UpdateHealth(amountToHeal);
         Destroy(gameObject);
     }
 }
