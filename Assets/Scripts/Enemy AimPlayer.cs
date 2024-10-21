@@ -14,6 +14,7 @@ public class EnemyAimPlayer : MonoBehaviour
     
     private void AimThePlayer()
     {
+        if (player == null) return;
         Vector2 direction = (player.position - transform.position).normalized;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

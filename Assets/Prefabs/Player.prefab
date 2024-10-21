@@ -550,6 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1821958376446605824}
+  particles: {fileID: 5660257289517582031, guid: ef93f47c691011e4ab6cc24415a1f8a6, type: 3}
   maxHealth: 100
 --- !u!95 &2459242731699224085
 Animator:

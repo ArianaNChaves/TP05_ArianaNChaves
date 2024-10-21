@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour, IHealthHandler
 {
     [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject particles;
     [SerializeField] private int maxHealth = 100;
     
     private int _health;
@@ -40,6 +41,7 @@ public class Health : MonoBehaviour, IHealthHandler
     private void Die()
     {
         //todo AGREGAR ANIMACION, SONIDO, Y PARTICULAS DE MUERTE
-        Destroy(gameObject);
+        Instantiate(particles, transform.position, Quaternion.identity);
+        Destroy(gameObject,0.01f);
     }
 }
