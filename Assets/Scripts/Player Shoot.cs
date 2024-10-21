@@ -10,16 +10,22 @@ public class PlayerShoot : MonoBehaviour
 
     private float _timeToShoot = 0;
     private bool _canShoot = true;
-
+    private bool _isAttacking = false;
+    
     private void Update()
     {
         _timeToShoot += Time.deltaTime;
         
         ValidateShoot();
-        
         if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot)
         {
             Shoot();
+            _isAttacking = true;
+        }
+
+        if (!Input.GetKeyDown(KeyCode.Mouse0) && !_canShoot)
+        {
+            _isAttacking = false;
         }
     }
 
@@ -41,5 +47,10 @@ public class PlayerShoot : MonoBehaviour
     {
         _canShoot = false;
         _timeToShoot = 0;
+    }
+
+    public bool GetIsAttacking()
+    {
+        return _isAttacking;
     }
 }
