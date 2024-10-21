@@ -14,7 +14,7 @@ public class PlayerShoot : MonoBehaviour
     private float _timeToShoot = 0;
     private bool _canShoot = true;
     private bool _isAttacking = false;
-
+    private bool _hasFireRate = true;
 
     private void Start()
     {
@@ -31,16 +31,17 @@ public class PlayerShoot : MonoBehaviour
             Shoot();
             _isAttacking = true;
         }
-
-        if (!Input.GetKeyDown(KeyCode.Mouse0) && !_canShoot)
+        else
         {
             _isAttacking = false;
+
         }
+
     }
 
     private void ValidateShoot()
     {
-        if (_timeToShoot >= _fireRate)
+        if (_timeToShoot >= _fireRate || !_hasFireRate)
         {
             _canShoot = true;
         }
@@ -62,4 +63,6 @@ public class PlayerShoot : MonoBehaviour
     {
         return _isAttacking;
     }
+
+    public bool HasFireRate{ get => _hasFireRate; set => _hasFireRate = value; }
 }
