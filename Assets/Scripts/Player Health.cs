@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour, IHealthHandler
+public class PlayerHealth : MonoBehaviour, IHealthHandler
 {
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject particles;
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private SOPlayer playerData;
     
     private int _health;
-
+    private int _maxHealth;
     private void Start()
     {
-        _health = maxHealth;
+        _maxHealth = playerData.MaxHealth;
+        _health = _maxHealth;
         UpdateHealthBar();
     }
     
@@ -24,9 +26,9 @@ public class Health : MonoBehaviour, IHealthHandler
         {
             Die();
         }
-        if (_health > maxHealth)
+        if (_health > _maxHealth)
         {
-            _health = maxHealth;
+            _health = _maxHealth;
         }
 
         UpdateHealthBar();
@@ -34,8 +36,8 @@ public class Health : MonoBehaviour, IHealthHandler
 
     private void UpdateHealthBar()
     {
-        float clampedHealth = Mathf.Clamp(_health, 0, maxHealth);
-        healthBar.fillAmount = clampedHealth / maxHealth;
+        float clampedHealth = Mathf.Clamp(_health, 0, _maxHealth);
+        healthBar.fillAmount = clampedHealth / _maxHealth;
     }
 
     private void Die()

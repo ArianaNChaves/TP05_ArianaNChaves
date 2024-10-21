@@ -1,17 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float fireRate;
-
+    [SerializeField] private SOPlayer playerData;
+    
+    private float _fireRate;
     private float _timeToShoot = 0;
     private bool _canShoot = true;
     private bool _isAttacking = false;
-    
+
+
+    private void Start()
+    {
+        _fireRate = playerData.FireRate;
+    }
+
     private void Update()
     {
         _timeToShoot += Time.deltaTime;
@@ -31,7 +40,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void ValidateShoot()
     {
-        if (_timeToShoot >= fireRate)
+        if (_timeToShoot >= _fireRate)
         {
             _canShoot = true;
         }

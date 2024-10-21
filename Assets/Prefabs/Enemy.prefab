@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 847476809571802877}
-  bulletPrefab: {fileID: 6948319904522894226, guid: 00011347a8843e347810dbd044e96fc0, type: 3}
-  fireRate: 2
+  bulletPrefab: {fileID: 6948319904522894226, guid: 05204a72cf6a27f488bd4b2e96e0170d, type: 3}
+  enemyData: {fileID: 11400000, guid: 662bed93a320c2e40b0ae593211a892c, type: 2}
 --- !u!114 &3104227251127978922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,10 +128,10 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 14903
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -148,8 +148,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.280866, y: 0.4756625}
-  m_Size: {x: 14.258139, y: 5.1842256}
+  m_Offset: {x: 2.4886653, y: -0.36878356}
+  m_Size: {x: 10.673838, y: 3.4953933}
   m_Direction: 1
 --- !u!1 &6874698209895467652
 GameObject:
@@ -163,7 +163,7 @@ GameObject:
   m_Layer: 11
   m_Name: ShootPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 6874698209895467652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.788, y: 0, z: 0}
+  m_LocalPosition: {x: 1.25, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -193,8 +193,8 @@ GameObject:
   - component: {fileID: 5810844248994871671}
   - component: {fileID: 8700913966842387430}
   - component: {fileID: 3789395359846714020}
-  - component: {fileID: 3985080139715500897}
   - component: {fileID: 8123342419566060605}
+  - component: {fileID: -2502924444050476567}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8909571079204667112}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.2200003, y: -2.6339998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -298,21 +298,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3985080139715500897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8909571079204667112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c3f67eecadf944ea46c9cc6491dacc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 1522395459535743038}
-  particles: {fileID: 5660257289517582031, guid: ef93f47c691011e4ab6cc24415a1f8a6, type: 3}
-  maxHealth: 100
 --- !u!61 &8123342419566060605
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -358,6 +343,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &-2502924444050476567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909571079204667112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed3af67d99a7044caa315d56e45053d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1522395459535743038}
+  particles: {fileID: 5660257289517582031, guid: ef93f47c691011e4ab6cc24415a1f8a6, type: 3}
+  enemyData: {fileID: 11400000, guid: 662bed93a320c2e40b0ae593211a892c, type: 2}
 --- !u!1001 &7800878614551703458
 PrefabInstance:
   m_ObjectHideFlags: 0

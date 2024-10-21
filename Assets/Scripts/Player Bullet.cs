@@ -2,35 +2,41 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Bullet : MonoBehaviour
+public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField] private int damage;
-    [SerializeField] private float speed;
-    [SerializeField] private float lifeTime = 5.0f;
-
+    [SerializeField] private SOPlayer bulletData;
+    
+    private int _damage;
+    private float _speed;
+    private float _lifeTime = 5.0f;
     private Rigidbody2D _rigidbody2D;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _damage = bulletData.Damage;
+        _speed = bulletData.Velocity;
+        _lifeTime = bulletData.LifeTime;
+        
         Shot();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IHealthHandler healthHandler = collision.gameObject.GetComponent<IHealthHandler>();
-        healthHandler.UpdateHealth(-damage);
+        healthHandler.UpdateHealth(-_damage);
         Destroy(gameObject);
     }
     private void Destroy()
     {
-        Destroy(gameObject, lifeTime);
+        Destroy(gameObject, _lifeTime);
     }
 
     private void Shot()
     {
-        _rigidbody2D.velocity = new Vector2(transform.right.x, transform.right.y) * speed;
+        _rigidbody2D.velocity = new Vector2(transform.right.x, transform.right.y) * _speed;
         Destroy();
     }
 }

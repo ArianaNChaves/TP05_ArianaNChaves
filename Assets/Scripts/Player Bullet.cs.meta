@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 66812c7adf64b444a994a87100bec660
+guid: 20e531236c3e26642acc733d9f3fb4e5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - healData: {fileID: 11400000, guid: 6f403440bebb64e4cb6a0f8e74550d73, type: 2}
+  - bulletData: {fileID: 11400000, guid: 649104c8bc2b5ee4d8e1a3dbfb80882d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

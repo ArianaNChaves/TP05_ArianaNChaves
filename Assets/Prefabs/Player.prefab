@@ -453,8 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7befb849499b17045b984e84cd43b701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  jumpForce: 7
+  playerData: {fileID: 11400000, guid: 649104c8bc2b5ee4d8e1a3dbfb80882d, type: 2}
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -536,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 7424933470469882511}
   bulletPrefab: {fileID: 6948319904522894226, guid: 00011347a8843e347810dbd044e96fc0, type: 3}
-  fireRate: 1
+  playerData: {fileID: 11400000, guid: 649104c8bc2b5ee4d8e1a3dbfb80882d, type: 2}
 --- !u!114 &7667963034142680602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,7 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1821958376446605824}
   particles: {fileID: 5660257289517582031, guid: ef93f47c691011e4ab6cc24415a1f8a6, type: 3}
-  maxHealth: 100
+  playerData: {fileID: 11400000, guid: 649104c8bc2b5ee4d8e1a3dbfb80882d, type: 2}
 --- !u!95 &2459242731699224085
 Animator:
   serializedVersion: 5

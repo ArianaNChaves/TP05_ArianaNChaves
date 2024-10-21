@@ -2,16 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyShoot : MonoBehaviour
 {
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float fireRate;
-
+    [SerializeField] private SOEnemy enemyData;
+    
+    private float _fireRate;
     private float _timeToShoot = 0;
     private bool _canShoot = false;
     private bool _seePlayer = false;
+
+    private void Start()
+    {
+        _fireRate = enemyData.FireRate;
+    }
 
     private void Update()
     {
@@ -34,7 +41,7 @@ public class EnemyShoot : MonoBehaviour
     
     private void ValidateShoot()
     {
-        if (_timeToShoot >= fireRate && _seePlayer)
+        if (_timeToShoot >= _fireRate && _seePlayer)
         {
             _canShoot = true;
         }

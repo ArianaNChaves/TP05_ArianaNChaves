@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private static readonly int Speed = Animator.StringToHash("Speed");
-    [SerializeField] private float movementSpeed = 5f;
-    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private SOPlayer playerData;
     [SerializeField] private LayerMask groundLayer; 
     [SerializeField] private Transform groundCheck;
     [SerializeField, Range(0.1f, 1f)] private float rayLength = 0.5f;
 
     private Rigidbody2D _rigidbody2D;
     private bool _isGrounded;
-    private const int SPEEDFIXED = 100;
-    private SpriteRenderer _spriteRenderer;
     private bool _facingRight = true;
     private float _horizontalMovement;
+    
+    private float _jumpForce;
+    private float _movementSpeed;
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _jumpForce = playerData.JumpForce;
+        _movementSpeed = playerData.MovementSpeed;
     }
 
     private void FixedUpdate()
@@ -50,13 +51,13 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
         
-        Vector2 speed = new Vector2(_horizontalMovement * (movementSpeed), _rigidbody2D.velocity.y);
+        Vector2 speed = new Vector2(_horizontalMovement * (_movementSpeed), _rigidbody2D.velocity.y);
         _rigidbody2D.velocity = speed;
     }
 
     private void Jump()
     {
-        _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
     }
 
     private void CheckGrounded()
