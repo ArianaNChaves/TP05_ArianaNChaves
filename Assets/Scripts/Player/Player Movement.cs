@@ -8,15 +8,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SOPlayer playerData;
     [SerializeField] private LayerMask groundLayer; 
     [SerializeField] private Transform groundCheck;
-    [SerializeField, Range(0.1f, 1f)] private float rayLength = 0.5f;
+    [SerializeField] private float sphereRadius;
 
     private Rigidbody2D _rigidbody2D;
     private bool _isGrounded;
     private bool _facingRight = true;
     private float _horizontalMovement;
-    
     private float _jumpForce;
     private float _movementSpeed;
+
+    private const float NormalSpeed = 1.0f;
+    private const float AirSpeedModifier = 0.5f;
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         _horizontalMovement = Input.GetAxis("Horizontal");
+        _horizontalMovement *= _isGrounded ? NormalSpeed : AirSpeedModifier;
         
         if (_horizontalMovement > 0)
         {
@@ -63,8 +66,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, Vector2.down, rayLength, groundLayer);
-        _isGrounded = hit.collider != null;
+        Collider2D hit = Physics2D.OverlapCircle(groundCheck.position, sphereRadius, groundLayer);
+        _isGrounded = hit != null;
     }
 
     private void Flip()
@@ -79,6 +82,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * rayLength);
+        Gizmos.DrawWireSphere(groundCheck.position, sphereRadius);
     }
 }

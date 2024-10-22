@@ -18678,13 +18678,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1014757438906599814, guid: 35270898e9a10a445837a62af4f19266, type: 3}
+      propertyPath: sphereRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3440147600260275435, guid: 35270898e9a10a445837a62af4f19266, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457375116538857113, guid: 35270898e9a10a445837a62af4f19266, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 68c638d80f9ddec4aba0b55c99a06fd0, type: 2}
     - target: {fileID: 3457375116538857113, guid: 35270898e9a10a445837a62af4f19266, type: 3}
       propertyPath: m_GravityScale
-      value: 1.5
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4044317850418884321, guid: 35270898e9a10a445837a62af4f19266, type: 3}
       propertyPath: m_LocalPosition.x
