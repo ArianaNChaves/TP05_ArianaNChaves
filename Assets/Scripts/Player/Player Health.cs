@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IHealthHandler
 {
+    public event Action PlayerDeath;
+    
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject particles;
     [SerializeField] private SOPlayer playerData;
@@ -21,6 +24,7 @@ public class PlayerHealth : MonoBehaviour, IHealthHandler
     
     public void UpdateHealth(int amount)
     {
+        HealthChangedSound(amount);
         _health += amount;
         if (_health <= 0)
         {
@@ -42,8 +46,21 @@ public class PlayerHealth : MonoBehaviour, IHealthHandler
 
     private void Die()
     {
-        //todo AGREGAR ANIMACION, SONIDO, Y PARTICULAS DE MUERTE
+        PlayerDeath?.Invoke();
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject,0.01f);
+    }
+
+    private void HealthChangedSound(int amount)
+    {
+        if (amount >= 0)
+        {
+            AudioManager.Instance.PlayEffect("Pickup");
+        }
+        else
+        {
+            AudioManager.Instance.PlayEffect("Player Hit");
+
+        }
     }
 }

@@ -271,6 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 572591042}
+  - component: {fileID: 572591043}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -293,6 +294,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &572591043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572591041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3034339bfe92d40838fc728101cb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3958211871505463221}
+  gameOverPanel: {fileID: 0}
 --- !u!1 &930311462
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,8 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSounds:
-  - soundName: 
-    clip: {fileID: 0}
+  - soundName: Main Theme
+    clip: {fileID: 8300000, guid: 3f39cb3a953de87438d8a09dc3ed3c78, type: 3}
   sfxSounds:
   - soundName: Death
     clip: {fileID: 8300000, guid: ce85ec69f81413448a7fd0c9d97c8276, type: 3}
@@ -658,8 +673,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c2838534010183e4bba4d234abd91225, type: 3}
   - soundName: Pickup
     clip: {fileID: 8300000, guid: c5d1946480230ec4eb98c42023fcb367, type: 3}
-  - soundName: Lose Sound
+  - soundName: Game Over
     clip: {fileID: 8300000, guid: b9bc9f6934eed8e41bf1ebcc12f8ff8c, type: 3}
+  - soundName: Player Hit
+    clip: {fileID: 8300000, guid: f66dbbcad7ae3274da222fab3095b2d0, type: 3}
+  - soundName: Enemy Attack
+    clip: {fileID: 8300000, guid: 73da476128148d2469f26545ba6505c2, type: 3}
   audioMixer: {fileID: 24100000, guid: 72b59b36508b2cd48aaba34c78fe4bf0, type: 2}
   musicSource: {fileID: 932501329}
   sfxSource: {fileID: 932501328}
@@ -1021,6 +1040,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpColor: {r: 0, g: 0.93155813, b: 1, a: 1}
   powerUpTimeCondition: 5
+--- !u!114 &3958211871505463221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7667963034142680602, guid: 35270898e9a10a445837a62af4f19266, type: 3}
+  m_PrefabInstance: {fileID: 197588151897534748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512237017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c3f67eecadf944ea46c9cc6491dacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7467172746721486887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1090,9 +1120,9 @@ SceneRoots:
   - {fileID: 930311464}
   - {fileID: 370237323}
   - {fileID: 7467172746721486887}
-  - {fileID: 1950354669}
   - {fileID: 197588151897534748}
   - {fileID: 2580514277673141345}
   - {fileID: 1428415833}
   - {fileID: 932501331}
   - {fileID: 572591042}
+  - {fileID: 1950354669}
