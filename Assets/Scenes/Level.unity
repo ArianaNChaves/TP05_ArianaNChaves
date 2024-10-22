@@ -17343,13 +17343,14 @@ GameObject:
   - component: {fileID: 1426205725}
   - component: {fileID: 1426205727}
   - component: {fileID: 1426205726}
+  - component: {fileID: 1426205728}
   m_Layer: 5
   m_Name: Panel Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1426205725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17408,6 +17409,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426205724}
   m_CullTransparentMesh: 1
+--- !u!114 &1426205728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426205724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3dadf7ac245f094aa5953596c2b55f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1438636011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18669,6 +18682,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 68c638d80f9ddec4aba0b55c99a06fd0, type: 2}
+    - target: {fileID: 3457375116538857113, guid: 35270898e9a10a445837a62af4f19266, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4044317850418884321, guid: 35270898e9a10a445837a62af4f19266, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.23
