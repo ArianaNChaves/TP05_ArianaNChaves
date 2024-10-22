@@ -53,7 +53,6 @@ public class UiHandler : MonoBehaviour
         musicVolume.onValueChanged.AddListener(SetMusicVolume);
         sfxVolume.onValueChanged.AddListener(SetSFXVolume);
 
-        EnemyHealth.OnEnemyDeath += UpdateEnemiesInfo;
         gameManager.Win += GameWin;
         player.PlayerDeath += GameOver;
     }
@@ -90,7 +89,6 @@ public class UiHandler : MonoBehaviour
         
         player.PlayerDeath -= GameOver;
         gameManager.Win -= GameWin;
-        EnemyHealth.OnEnemyDeath -= UpdateEnemiesInfo;
     }
     
     private void OnPlayButtonClicked()

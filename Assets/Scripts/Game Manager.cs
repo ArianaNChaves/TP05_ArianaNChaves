@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     private void VerifyWinCondition()
     {
         _enemyDeathCount++;
-        
+        gameplayUiHandler.UpdateEnemiesInfo();
         if (_totalEnemies == _enemyDeathCount)
         {
             Win?.Invoke();
