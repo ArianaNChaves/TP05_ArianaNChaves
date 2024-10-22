@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button settingsBackButton;
     [SerializeField] private Button creditsBackButton;
+    [SerializeField] private Button sfxButton;
 
     [Header("Panels")] 
     [SerializeField] private GameObject creditsPanel;
@@ -32,17 +34,38 @@ public class UIManager : MonoBehaviour
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         settingsBackButton.onClick.AddListener(OnSettingsBackButtonClicked);
         creditsBackButton.onClick.AddListener(OnCreditsBackButtonClicked);
-    }
+        sfxButton.onClick.AddListener(OnSoundEffectsButtonClicked);
 
+        
+        musicVolume.onValueChanged.AddListener(SetMusicVolume);
+        sfxVolume.onValueChanged.AddListener(SetSFXVolume);
+    }
 
     private void Start()
     {
+        AudioManager.Instance.PlayMusic("Main Theme");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+
+    private void OnDestroy()
+    {
+        playButton.onClick.RemoveListener(OnPlayButtonClicked);
+        creditsButton.onClick.RemoveListener(OnCreditsButtonClicked);
+        exitButton.onClick.RemoveListener(OnExitButtonClicked);
+        settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
+        settingsBackButton.onClick.RemoveListener(OnSettingsBackButtonClicked);
+        creditsBackButton.onClick.RemoveListener(OnSoundEffectsButtonClicked);
+        sfxButton.onClick.RemoveListener(OnSoundEffectsButtonClicked);
+
+        
+        musicVolume.onValueChanged.RemoveListener(SetMusicVolume);
+        sfxVolume.onValueChanged.RemoveListener(SetSFXVolume);
+    }
+
     private void OnPlayButtonClicked()
     {
-        Debug.Log("play");
+        SceneManager.LoadScene("Level");
     }
     private void OnCreditsButtonClicked()
     {
@@ -73,14 +96,14 @@ public class UIManager : MonoBehaviour
     }
     private void OnSoundEffectsButtonClicked()
     {
-        AudioManager.Instance.PlayEffect("Player Shot");
+        AudioManager.Instance.PlayEffect("Gunshot");
     }
-    public void SetMusicVolume()
+    public void SetMusicVolume(float value)
     {
-        Debug.Log("SetMusicVolume");
+        AudioManager.Instance.MusicVolume(value);
     }
-    public void SetSFXVolume()
+    public void SetSFXVolume(float value)
     {
-        Debug.Log("SetSFXVolume");
+        AudioManager.Instance.SfxVolume(value);
     }
 }
