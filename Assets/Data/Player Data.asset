@@ -18,4 +18,4 @@ MonoBehaviour:
   damage: 20
   fireRate: 1
   velocity: 15
-  lifeTime: 1
+  lifeTime: 0.7
