@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 63bf9554a5872a54cb35446ab5bef1a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -259,7 +259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1b974b3e3f1d09f42ac6dc587650f390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -449,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 7438335046651004693, guid: 871d04d692b265c48b12b0d4aee75baf, type: 3}
       propertyPath: m_Name
       value: Canvas HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8625276998185026103, guid: 871d04d692b265c48b12b0d4aee75baf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8746812216759551900, guid: 871d04d692b265c48b12b0d4aee75baf, type: 3}
       propertyPath: m_Color.b
