@@ -22,7 +22,10 @@ public class EnemyShoot : MonoBehaviour
 
     private void Update()
     {
-        _timeToShoot += Time.deltaTime;
+        if (_seePlayer)
+        {
+            _timeToShoot += Time.deltaTime;
+        }
         
         ValidateShoot();
         Shoot();
@@ -31,7 +34,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _seePlayer = true; 
+        _seePlayer = true;
     }
     
     private void OnTriggerExit2D(Collider2D collision)

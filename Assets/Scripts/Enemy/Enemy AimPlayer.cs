@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,12 @@ public class EnemyAimPlayer : MonoBehaviour
     {
         AimThePlayer();
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        AimThePlayer();
+    }
+
     private void AimThePlayer()
     {
         if (player == null) return;
