@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class UiHandler : MonoBehaviour
 {
+    public event Action<bool> IsPaused;
+    
     [Header("Buttons")] 
     [SerializeField] private Button playButton;
     [SerializeField] private Button exitButton;
@@ -28,6 +30,8 @@ public class UiHandler : MonoBehaviour
     [Header("Events")] 
     [SerializeField] private PlayerHealth player;
 
+
+    private bool _isPaused;
     private void Awake()
     {
         playButton.onClick.AddListener(OnPlayButtonClicked);
@@ -44,7 +48,7 @@ public class UiHandler : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1;
+        IsGamePaused(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         
@@ -116,7 +120,7 @@ public class UiHandler : MonoBehaviour
     {
         if (!pausePanel.activeSelf)
         {
-            Time.timeScale = 0;
+            IsGamePaused(true);
             
             mainPanel.SetActive(true);
             pausePanel.SetActive(true);
@@ -135,7 +139,7 @@ public class UiHandler : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             
-            Time.timeScale = 1;
+            IsGamePaused(false);
         }
     }
 
@@ -146,10 +150,25 @@ public class UiHandler : MonoBehaviour
 
     private void GameOver()
     {
+        IsGamePaused(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         
         mainPanel.SetActive(true);
         losePanel.SetActive(true);
+    }
+
+    private void IsGamePaused(bool value)
+    {
+        if (value)
+        {
+            Time.timeScale = 0;
+            IsPaused?.Invoke(value);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            IsPaused?.Invoke(value);
+        }
     }
 }

@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerHealth player;
-    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private UiHandler gameplayUiHandler;
+    [SerializeField] private GameObject player;
     private void Awake()
     {
-        player.PlayerDeath += GameOver;
+        playerHealth.PlayerDeath += GameOver;
+        gameplayUiHandler.IsPaused += StopPlayer;
     }
     private void Start()
     {
@@ -18,13 +21,20 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        player.PlayerDeath -= GameOver;
+        playerHealth.PlayerDeath -= GameOver;
+        gameplayUiHandler.IsPaused -= StopPlayer;
+
     }
 
     private void GameOver()
     {
         AudioManager.Instance.StopMusic();
         AudioManager.Instance.PlayEffect("Game Over");
+    }
+
+    private void StopPlayer(bool active)
+    {
+        player.SetActive(!active);
     }
     
 }
