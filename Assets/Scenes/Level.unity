@@ -1027,7 +1027,7 @@ GameObject:
   - component: {fileID: 230929783}
   - component: {fileID: 230929782}
   - component: {fileID: 230929781}
-  m_Layer: 14
+  m_Layer: 4
   m_Name: Water Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17894,7 +17894,7 @@ GameObject:
   - component: {fileID: 1506765808}
   - component: {fileID: 1506765807}
   - component: {fileID: 1506765806}
-  m_Layer: 14
+  m_Layer: 4
   m_Name: Water Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19166,7 +19166,7 @@ GameObject:
   - component: {fileID: 1880654802}
   - component: {fileID: 1880654801}
   - component: {fileID: 1880654800}
-  m_Layer: 14
+  m_Layer: 4
   m_Name: Water Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
