@@ -12,7 +12,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource musicSource, sfxSource;
 
     private string _lastSong;
-    
+    private float _musicVolume;
+    private float _SFXVolume;
     private const string MixerMusic = "MusicVolume";
     private const string MixerSFX = "SFXVolume";
     private void Awake()
@@ -56,13 +57,24 @@ public class AudioManager : MonoBehaviour
     }
     public void MusicVolume(float volume)
     {
+        _musicVolume = volume;
         audioMixer.SetFloat(MixerMusic, Mathf.Log10(volume) * 20);
     }
     public void SfxVolume(float volume)
     {
+        _SFXVolume = volume;
         audioMixer.SetFloat(MixerSFX, Mathf.Log10(volume) * 20);
     }
 
+    public float GetMusicVolume()
+    {
+        return _musicVolume;
+    }
+
+    public float GetSFXVolume()
+    {
+        return _SFXVolume;
+    }
     public void StopMusic()
     {
         _lastSong = "";

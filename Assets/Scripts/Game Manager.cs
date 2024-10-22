@@ -23,19 +23,8 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        StopTime();
         AudioManager.Instance.StopMusic();
         AudioManager.Instance.PlayEffect("Game Over");
-    }
-
-    private void StopTime()
-    {
-        Time.timeScale = 1;
-    }
-
-    private void ReanudeTime()
-    {
-        Time.timeScale = 1;
     }
     
 }
