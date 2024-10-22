@@ -2,15 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
     [SerializeField] private Sound[] musicSounds, sfxSounds;
-    
+    [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource musicSource, sfxSource;
 
     private string _lastSong;
+    
+    private const string MixerMusic = "MusicVolume";
+    private const string MixerSFX = "SFXVolume";
     private void Awake()
     {
         if (Instance == null)
@@ -52,11 +56,11 @@ public class AudioManager : MonoBehaviour
     }
     public void MusicVolume(float volume)
     {
-        musicSource.volume = volume;
+        audioMixer.SetFloat(MixerMusic, Mathf.Log10(volume) * 20);
     }
     public void SfxVolume(float volume)
     {
-        sfxSource.volume = volume;
+        audioMixer.SetFloat(MixerSFX, Mathf.Log10(volume) * 20);
     }
 
     public void StopMusic()

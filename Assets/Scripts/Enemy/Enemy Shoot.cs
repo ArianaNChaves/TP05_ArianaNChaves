@@ -49,6 +49,7 @@ public class EnemyShoot : MonoBehaviour
     private void Shoot()
     {
         if (!_canShoot) return;
+        AudioManager.Instance.PlayEffect("Enemy Attack");
         Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         ResetShootTime();
     }

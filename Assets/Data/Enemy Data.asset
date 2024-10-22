@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8457ac3e7b9be4093c201756e8f04a, type: 3}
   m_Name: Enemy Data
   m_EditorClassIdentifier: 
-  healthData: {fileID: 11400000, guid: 3ca918d966edcc94f9841b0059b6797c, type: 2}
-  bulletData: {fileID: 11400000, guid: 73465cbf40332b54dbc9830971f21ea7, type: 2}
   maxHealth: 100
-  damage: 35
+  damage: 30
   fireRate: 2
-  velocity: 15
+  velocity: 10
   lifeTime: 2

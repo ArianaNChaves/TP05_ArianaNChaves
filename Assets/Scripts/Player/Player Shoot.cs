@@ -49,6 +49,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
+        AudioManager.Instance.PlayEffect("Gunshot");
         Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         ResetShootTime();
     }
