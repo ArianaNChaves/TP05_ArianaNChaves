@@ -427,7 +427,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   groundCheck: {fileID: 7076983226217114947}
-  rayLength: 0.659
+  sphereRadius: 0.4
 --- !u!70 &3440147600260275435
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -479,7 +479,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 68c638d80f9ddec4aba0b55c99a06fd0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

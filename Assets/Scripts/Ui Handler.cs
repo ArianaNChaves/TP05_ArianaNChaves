@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -16,19 +18,26 @@ public class UiHandler : MonoBehaviour
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button settingsBackButton;
     [SerializeField] private Button backToMainMenuButton;
+    [SerializeField] private Button backToMenuButton;
 
     [Header("Panels")] 
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject winPanel;
     
     [Header("Sliders")] 
     [SerializeField] private Slider musicVolume;
     [SerializeField] private Slider sfxVolume;
     
-    [Header("Events")] 
+    [Header("Text")] 
+    [SerializeField] private TextMeshProUGUI enemiesDeath;
+    [SerializeField] private TextMeshProUGUI totalEnemies;
+    
+    [Header("References")] 
     [SerializeField] private PlayerHealth player;
+    [SerializeField] private GameManager gameManager;
 
 
     private bool _isPaused;
@@ -39,10 +48,13 @@ public class UiHandler : MonoBehaviour
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         settingsBackButton.onClick.AddListener(OnSettingsBackButtonClicked);
         backToMainMenuButton.onClick.AddListener(OnBackToMainMenuButtonClicked);
+        backToMenuButton.onClick.AddListener(OnBackToMainMenuButtonClicked);
         
         musicVolume.onValueChanged.AddListener(SetMusicVolume);
         sfxVolume.onValueChanged.AddListener(SetSFXVolume);
-        
+
+        EnemyHealth.OnEnemyDeath += UpdateEnemiesInfo;
+        gameManager.Win += GameWin;
         player.PlayerDeath += GameOver;
     }
 
@@ -53,6 +65,7 @@ public class UiHandler : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         
         UpdateAudioVolume();
+        UpdateEnemiesInfo();
     }
 
     private void Update()
@@ -70,13 +83,14 @@ public class UiHandler : MonoBehaviour
         settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
         settingsBackButton.onClick.RemoveListener(OnSettingsBackButtonClicked);
         backToMainMenuButton.onClick.RemoveListener(OnBackToMainMenuButtonClicked);
-
+        backToMenuButton.onClick.RemoveListener(OnBackToMainMenuButtonClicked);
         
         musicVolume.onValueChanged.RemoveListener(SetMusicVolume);
         sfxVolume.onValueChanged.RemoveListener(SetSFXVolume);
         
         player.PlayerDeath -= GameOver;
-
+        gameManager.Win -= GameWin;
+        EnemyHealth.OnEnemyDeath -= UpdateEnemiesInfo;
     }
     
     private void OnPlayButtonClicked()
@@ -170,5 +184,22 @@ public class UiHandler : MonoBehaviour
             Time.timeScale = 1;
             IsPaused?.Invoke(value);
         }
+    }
+
+    public void UpdateEnemiesInfo()
+    {
+        enemiesDeath.text = gameManager.GetTotalEnemiesDead().ToString();
+        totalEnemies.text = gameManager.GetTotalEnemies().ToString();
+    }
+
+    private void GameWin()
+    {
+        IsGamePaused(true);
+        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
+        mainPanel.SetActive(true);
+        winPanel.SetActive(true);
     }
 }

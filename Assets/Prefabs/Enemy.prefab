@@ -148,8 +148,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4886653, y: -0.36878356}
-  m_Size: {x: 10.673838, y: 3.4953933}
+  m_Offset: {x: -0.0000000345267, y: -0.28963098}
+  m_Size: {x: 10, y: 4.2416215}
   m_Direction: 1
 --- !u!1 &6874698209895467652
 GameObject:
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: -2502924444050476567}
   m_Layer: 11
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1b974b3e3f1d09f42ac6dc587650f390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}

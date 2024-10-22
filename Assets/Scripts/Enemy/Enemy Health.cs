@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour, IHealthHandler
 {
+    public static event Action OnEnemyDeath;
+    
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject particles;
     [SerializeField] private SOEnemy enemyData;
@@ -25,6 +28,7 @@ public class EnemyHealth : MonoBehaviour, IHealthHandler
         AudioManager.Instance.PlayEffect("Enemy Hit");
         if (_health <= 0)
         {
+            OnEnemyDeath?.Invoke();
             Die();
         }
         if (_health > _maxHealth)
