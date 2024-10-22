@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4694905742253039405}
   - component: {fileID: 3910259953932077586}
   - component: {fileID: 1254816312515388350}
+  - component: {fileID: 9109617246655542943}
   m_Layer: 13
   m_Name: Heal
   m_TagString: Untagged
@@ -134,3 +135,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healData: {fileID: 11400000, guid: 6f403440bebb64e4cb6a0f8e74550d73, type: 2}
+--- !u!95 &9109617246655542943
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764318108834708889}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 411ca5255c6b0a6478fab20bca4f7bac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

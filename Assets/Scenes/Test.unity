@@ -392,32 +392,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1369443546 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7764318108834708889, guid: 1eef502c1887b3e4a8c355fe791db51d, type: 3}
-  m_PrefabInstance: {fileID: 7467172746721486887}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1369443551
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369443546}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 411ca5255c6b0a6478fab20bca4f7bac, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1428415833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,11 +484,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1512237017 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155818698856716438, guid: 35270898e9a10a445837a62af4f19266, type: 3}
-  m_PrefabInstance: {fileID: 197588151897534748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1950354666
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,18 +600,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4546087671690326714, guid: 35270898e9a10a445837a62af4f19266, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4546087671690326714, guid: 35270898e9a10a445837a62af4f19266, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4546087671690326714, guid: 35270898e9a10a445837a62af4f19266, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9155818698856716438, guid: 35270898e9a10a445837a62af4f19266, type: 3}
       propertyPath: m_Name
       value: Player
@@ -650,10 +607,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9155818698856716438, guid: 35270898e9a10a445837a62af4f19266, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3958211871505463218}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35270898e9a10a445837a62af4f19266, type: 3}
 --- !u!1001 &2580514277673141345
 PrefabInstance:
@@ -721,26 +675,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4044317850418884321, guid: 35270898e9a10a445837a62af4f19266, type: 3}
   m_PrefabInstance: {fileID: 197588151897534748}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3958211871505463218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512237017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf98cc7ae3d8e514b80da949b627a223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUpColor: {r: 0, g: 0.93155813, b: 1, a: 1}
-  powerUpTimeCondition: 5
 --- !u!114 &3958211871505463221 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7667963034142680602, guid: 35270898e9a10a445837a62af4f19266, type: 3}
   m_PrefabInstance: {fileID: 197588151897534748}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512237017}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5c3f67eecadf944ea46c9cc6491dacc, type: 3}
@@ -858,10 +798,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7764318108834708889, guid: 1eef502c1887b3e4a8c355fe791db51d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1369443551}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eef502c1887b3e4a8c355fe791db51d, type: 3}
 --- !u!1001 &7829645784389842552
 PrefabInstance:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: 
   movementSpeed: 8
-  jumpForce: 6
+  jumpForce: 7
   maxHealth: 100
   damage: 20
   fireRate: 1
