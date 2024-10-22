@@ -22,6 +22,7 @@ public class EnemyHealth : MonoBehaviour, IHealthHandler
     public void UpdateHealth(int amount)
     {
         _health += amount;
+        AudioManager.Instance.PlayEffect("Enemy Hit");
         if (_health <= 0)
         {
             Die();
@@ -42,7 +43,6 @@ public class EnemyHealth : MonoBehaviour, IHealthHandler
 
     private void Die()
     {
-        //todo AGREGAR ANIMACION, SONIDO, Y PARTICULAS DE MUERTE
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject,0.01f);
     }

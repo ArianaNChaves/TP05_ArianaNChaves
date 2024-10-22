@@ -679,6 +679,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f66dbbcad7ae3274da222fab3095b2d0, type: 3}
   - soundName: Enemy Attack
     clip: {fileID: 8300000, guid: 73da476128148d2469f26545ba6505c2, type: 3}
+  - soundName: Enemy Hit
+    clip: {fileID: 8300000, guid: 44a2e8824457837418060ecc097890ce, type: 3}
   audioMixer: {fileID: 24100000, guid: 72b59b36508b2cd48aaba34c78fe4bf0, type: 2}
   musicSource: {fileID: 932501329}
   sfxSource: {fileID: 932501328}
