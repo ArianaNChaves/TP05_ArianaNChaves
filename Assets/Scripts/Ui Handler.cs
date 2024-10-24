@@ -162,7 +162,18 @@ public class UiHandler : MonoBehaviour
 
     private void GameOver()
     {
-        IsGamePaused(true);
+        //StartCoroutine(GameOverCoroutine());
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
+        mainPanel.SetActive(true);
+        losePanel.SetActive(true);
+    }
+
+    private IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(3.5f);
+        //IsGamePaused(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         

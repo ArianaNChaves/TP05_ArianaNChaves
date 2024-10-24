@@ -38,6 +38,14 @@ public class PlayerHealth : MonoBehaviour, IHealthHandler
         UpdateHealthBar();
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            UpdateHealth(-99999);
+        }
+    }
+
     private void UpdateHealthBar()
     {
         float clampedHealth = Mathf.Clamp(_health, 0, _maxHealth);

@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         AudioManager.Instance.StopMusic();
-        AudioManager.Instance.PlayEffect("Game Over");
+        AudioManager.Instance.PlayMusic("Game Over");
     }
 
     private void StopPlayer(bool active)
