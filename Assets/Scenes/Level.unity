@@ -18960,18 +18960,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 7330469211728433181, guid: 319353627bbc5d049a663cb787b8339e, type: 3}
-      propertyPath: musicSounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7330469211728433181, guid: 319353627bbc5d049a663cb787b8339e, type: 3}
-      propertyPath: musicSounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: b9bc9f6934eed8e41bf1ebcc12f8ff8c, type: 3}
-    - target: {fileID: 7330469211728433181, guid: 319353627bbc5d049a663cb787b8339e, type: 3}
-      propertyPath: musicSounds.Array.data[1].soundName
-      value: Game Over
-      objectReference: {fileID: 0}
     - target: {fileID: 9152342863448675664, guid: 319353627bbc5d049a663cb787b8339e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

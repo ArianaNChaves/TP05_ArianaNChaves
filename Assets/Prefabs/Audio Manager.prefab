@@ -49,6 +49,8 @@ MonoBehaviour:
   musicSounds:
   - soundName: Main Theme
     clip: {fileID: 8300000, guid: 3f39cb3a953de87438d8a09dc3ed3c78, type: 3}
+  - soundName: Game Over
+    clip: {fileID: 8300000, guid: b9bc9f6934eed8e41bf1ebcc12f8ff8c, type: 3}
   sfxSounds:
   - soundName: Death
     clip: {fileID: 8300000, guid: ce85ec69f81413448a7fd0c9d97c8276, type: 3}
