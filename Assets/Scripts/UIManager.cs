@@ -46,6 +46,9 @@ public class UIManager : MonoBehaviour
         AudioManager.Instance.PlayMusic("Main Theme");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        
+        AudioManager.Instance.MusicVolume(musicVolume.value);
+        AudioManager.Instance.SfxVolume(sfxVolume.value);
     }
 
     private void OnDestroy()

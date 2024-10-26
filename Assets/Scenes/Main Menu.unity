@@ -488,7 +488,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2213,6 +2213,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4060537217440888155, guid: 319353627bbc5d049a663cb787b8339e, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314234314425768566, guid: 319353627bbc5d049a663cb787b8339e, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9152342863448675664, guid: 319353627bbc5d049a663cb787b8339e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2771,7 +2779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -213.66812}
+  m_AnchoredPosition: {x: 0, y: -213.66809}
   m_SizeDelta: {x: -1206.0697, y: -574.7352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694048040
@@ -3601,7 +3609,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3894,7 +3902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -271}
+  m_AnchoredPosition: {x: 0, y: -271}
   m_SizeDelta: {x: -1206.0697, y: -689.399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2058670040
